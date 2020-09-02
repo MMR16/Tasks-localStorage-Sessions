@@ -1,34 +1,54 @@
 const sotreBtn = document.getElementById('store-btn');
 const retrBtn = document.getElementById('retrieve-btn');
 const clearBtn = document.getElementById('clear-btn');
+///////////////session\\\\\\\\\\\\\\
+const sotreSBtn = document.getElementById('store-s-btn');
+const retrSBtn = document.getElementById('retrieve-s-btn');
+const clearSBtn = document.getElementById('clear-s-btn');
+const lbl = document.getElementById('lbl');
 
-const userid = '163';
 const user01 = {
+    id: 163,
     name: 'Mostafa',
     Age: 26,
     Hobbies: ["programming", 'Playing games']
 };
 
 sotreBtn.addEventListener('click', () => {
-    localStorage.setItem('key', userid);
     localStorage.setItem('user', JSON.stringify(user01));
 
 });
 
 retrBtn.addEventListener('click', () => {
-    const extracted = localStorage.getItem('key');
     const extractedUser = localStorage.getItem('user');
-
-    if (extracted && extractedUser) {
-        console.log(`Got the Id - ${extracted}`);
+    if (extractedUser) {
         const ParsedUser = JSON.parse(extractedUser);
-        console.log(`Got the User: ${ParsedUser.name}`);
+        // lbl.insertAdjacentText("beforeend", `Got the User: ${ParsedUser.name}`)
+        lbl.innerText = ` Hello From LocalStorage, Got the User: ${ParsedUser.name}`;
+        // console.log(`Got the User: ${ParsedUser.name}`);
         // console.log(ParsedUser);
     } else
-        console.log("Couldn't find Id");
+        lbl.innerText = `Couldn't find UserName`;
 });
 
 clearBtn.addEventListener('click', () => {
-    localStorage.removeItem('key')
     localStorage.removeItem('user')
+});
+///////session\\\\\\\\\\
+sotreSBtn.addEventListener('click', () => {
+    sessionStorage.setItem('user', JSON.stringify(user01));
+
+});
+
+retrSBtn.addEventListener('click', () => {
+    const extractedUser = sessionStorage.getItem('user');
+    if (extractedUser) {
+        const ParsedUser = JSON.parse(extractedUser);
+        lbl.innerText = ` Hello From Session, Got the User: ${ParsedUser.name}`;
+    } else
+        lbl.innerText = `Couldn't find UserName`;
+});
+
+clearSBtn.addEventListener('click', () => {
+    sessionStorage.removeItem('user')
 });

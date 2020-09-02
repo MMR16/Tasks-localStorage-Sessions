@@ -1,27 +1,46 @@
 html {
-  font-family: sans-serif;
+    font-family: sans-serif;
 }
 
 body {
-  margin: 3rem;
+    margin: 3rem;
 }
 
 button {
-  font: inherit;
-  background: blue;
-  color: white;
-  padding: 1rem 2rem;
-  cursor: pointer;
-  border: 1px solid blue;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.26);
+    font: inherit;
+    background: blue;
+    color: white;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border: 1px solid blue;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.26);
+    margin: 1rem;
+    width: 15rem;
+    height: 5rem;
+    border-radius: 50%;
 }
 
 button:focus {
-  outline: none;
+    outline: none;
 }
 
 button:hover,
 button:active {
-  background: #7904ff;
-  border-color: #7904ff;
+    background: #7904ff;
+    border-color: #7904ff;
+}
+
+#container {
+    margin-left: 20rem;
+}
+
+#lbl {
+    margin-top: 10rem;
+    width: fit-content;
+    font-size: 30px;
+    color: red;
+}
+
+#text {
+    margin: 7rem 7rem;
 }
